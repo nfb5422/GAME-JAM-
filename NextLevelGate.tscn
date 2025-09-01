@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4mmh34lymqcg"]
+
+[ext_resource type="Script" uid="uid://7oo40vrmlsvq" path="res://next_level_gate.gd" id="1_vlfo8"]
+[ext_resource type="Texture2D" uid="uid://d375hqducmk84" path="res://icon.svg" id="2_sd282"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkomd"]
+
+[node name="NextLevelGate" type="Area2D"]
+script = ExtResource("1_vlfo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 2)
+texture = ExtResource("2_sd282")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4.84, 12.4)
+shape = SubResource("RectangleShape2D_rkomd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
