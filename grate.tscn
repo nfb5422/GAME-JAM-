@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddeou5bosq2pj"]
+
+[ext_resource type="Texture2D" uid="uid://csra6contunue" path="res://grates.png" id="1_71rv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avr01"]
+
+[node name="grate" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(9.08, 0.799999)
+shape = SubResource("RectangleShape2D_avr01")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_71rv5")

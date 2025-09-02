@@ -1,38 +1,137 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp5irk625ojmk"]
+[gd_scene load_steps=15 format=3 uid="uid://bp5irk625ojmk"]
 
-[ext_resource type="PackedScene" uid="uid://bnotlcks3agb8" path="res://player.tscn" id="1_q04gf"]
-[ext_resource type="PackedScene" uid="uid://b4mmh34lymqcg" path="res://NextLevelGate.tscn" id="2_s8dg4"]
-[ext_resource type="PackedScene" uid="uid://d0o35do0y104a" path="res://Countdown.tscn" id="3_s8dg4"]
+[ext_resource type="PackedScene" uid="uid://bnotlcks3agb8" path="res://player.tscn" id="1_bexhn"]
+[ext_resource type="PackedScene" uid="uid://b4mmh34lymqcg" path="res://NextLevelGate.tscn" id="2_2nifc"]
+[ext_resource type="PackedScene" uid="uid://d0o35do0y104a" path="res://Countdown.tscn" id="2_wkftn"]
+[ext_resource type="PackedScene" uid="uid://ddeou5bosq2pj" path="res://grate.tscn" id="4_q4iis"]
+[ext_resource type="PackedScene" uid="uid://cmwj23uow6rbq" path="res://vent.tscn" id="6_m3clv"]
+[ext_resource type="PackedScene" uid="uid://c5cty25vm2kse" path="res://box.tscn" id="7_6faey"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7iv1"]
-size = Vector2(2989, 197)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwdpc"]
+size = Vector2(3140.93, 35.4242)
 
-[node name="Level" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6faey"]
+size = Vector2(88.5381, 7.97381)
 
-[node name="NextLevelGate" parent="." instance=ExtResource("2_s8dg4")]
-position = Vector2(1052, 194)
-scale = Vector2(0.981831, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc7oo"]
+size = Vector2(17.2727, 132.731)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6x3wt"]
+size = Vector2(79.1863, 28.1007)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3453u"]
+size = Vector2(4.15344, 2162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46pvi"]
+size = Vector2(254.469, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvkd4"]
+size = Vector2(103.319, 28.6487)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj4lr"]
+size = Vector2(45, 532)
+
+[node name="Level2" type="Node2D"]
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(106, 2)
+position = Vector2(10, -20)
+scale = Vector2(0.897183, 0.98332)
 constant_linear_velocity = Vector2(0, 610)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(-1, 401)
-shape = SubResource("RectangleShape2D_t7iv1")
-debug_color = Color(0.298039, 0.243137, 0.929412, 0.419608)
-
-[node name="Player" parent="Floor" instance=ExtResource("1_q04gf")]
-position = Vector2(-674, 287)
+position = Vector2(-11.1382, 369.751)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_wwdpc")
 
 [node name="FloorVisiual" type="ColorRect" parent="."]
-offset_left = -1580.0
-offset_top = 509.0
-offset_right = 1217.0
-offset_bottom = 745.0
-color = Color(0.201827, 0.675103, 7.70092e-07, 1)
+visible = false
+offset_left = -1438.0
+offset_top = 639.0
+offset_right = 1359.0
+offset_bottom = 875.0
+color = Color(1, 0.226919, 0.135095, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.3, 0.3)
+position = Vector2(19, -715)
+scale = Vector2(3.16, 2.04)
+zoom = Vector2(0.4, 0.3)
 
-[node name="CountdownLabel" parent="." instance=ExtResource("3_s8dg4")]
+[node name="NextLevelGate" parent="." instance=ExtResource("2_2nifc")]
+position = Vector2(899, -1085)
+scale = Vector2(1.66141, 1.63242)
+
+[node name="Player" parent="." instance=ExtResource("1_bexhn")]
+position = Vector2(-1152, 158)
+scale = Vector2(0.719999, 0.597006)
+collision_mask = 27
+platform_floor_layers = 4294967294
+
+[node name="CountdownLabel" parent="." instance=ExtResource("2_wkftn")]
+
+[node name="Vent" parent="." instance=ExtResource("6_m3clv")]
+position = Vector2(767, -1594)
+rotation = -3.14373
+scale = Vector2(1.265, 1.265)
+
+[node name="CeilingsAndWalls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CeilingsAndWalls"]
+position = Vector2(-754.751, -939)
+scale = Vector2(14.2933, 4.93537)
+shape = SubResource("RectangleShape2D_6faey")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CeilingsAndWalls"]
+position = Vector2(-1386, -715)
+scale = Vector2(3.08, 16.04)
+shape = SubResource("RectangleShape2D_nc7oo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CeilingsAndWalls"]
+position = Vector2(10, -1751)
+scale = Vector2(35.8395, -2.38428)
+shape = SubResource("RectangleShape2D_6x3wt")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CeilingsAndWalls"]
+position = Vector2(1421, -704)
+scale = Vector2(16.007, 1)
+shape = SubResource("RectangleShape2D_3453u")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CeilingsAndWalls"]
+position = Vector2(-449.625, -112)
+scale = Vector2(7.44, 1)
+shape = SubResource("RectangleShape2D_46pvi")
+
+[node name="grate" parent="CeilingsAndWalls" instance=ExtResource("4_q4iis")]
+position = Vector2(447, 87)
+rotation = 1.58354
+collision_layer = 16
+collision_mask = 27
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="CeilingsAndWalls"]
+position = Vector2(893, -836)
+scale = Vector2(9.64, 1.2566)
+shape = SubResource("RectangleShape2D_fvkd4")
+
+[node name="grate2" parent="CeilingsAndWalls" instance=ExtResource("4_q4iis")]
+position = Vector2(863, -1407)
+rotation = 0.00857643
+scale = Vector2(1.96065, 1)
+collision_layer = 16
+collision_mask = 27
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="CeilingsAndWalls"]
+position = Vector2(427, -1089)
+shape = SubResource("RectangleShape2D_pj4lr")
+
+[node name="Vent2" parent="." instance=ExtResource("6_m3clv")]
+position = Vector2(-311, -662)
+rotation = -0.00911344
+scale = Vector2(1, 1.96)
+
+[node name="box" parent="." instance=ExtResource("7_6faey")]
+position = Vector2(-188, -289)
+
+[node name="box2" parent="." instance=ExtResource("7_6faey")]
+position = Vector2(177, -286)
+
+[node name="box3" parent="." instance=ExtResource("7_6faey")]
+position = Vector2(8, -545)
