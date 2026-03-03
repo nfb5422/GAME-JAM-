@@ -1,1 +1,3 @@
 # Change_Phase
+
+This repo is a demo of a Game Jam topic Phase Change. For this week-long project, I took the topic to develop a simple puzzle solver, forcing th eplayer to change between a liquid, solid, and gas before the timer runs out. Due to the short time constraint on the project, my main goal was completing functionality of the player's basic experience. Controls are simple WASD with the player's form based on the direction they are moving. There are also stage hazards/tools depending on what form you place. This is to mainly show the capabilites of what Gadot is capable of within such a short time span. 
